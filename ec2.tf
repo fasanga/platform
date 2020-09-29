@@ -5,10 +5,10 @@ resource "aws_instance" "webapp" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum update -y
-              yum install -y httpd
-              systemctl start httpd.service
-              systemctl enable httpd.service
+             sudo  yum update -y
+             sudo  yum install -y httpd
+             sudo  systemctl start httpd.service
+             sudo  systemctl enable httpd.service
               echo "Hello, World. How is everyone doing" > /var/www/html/index.html
               #nohup busybox httpd -f -p 8080 &
               EOF
