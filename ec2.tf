@@ -25,3 +25,10 @@ resource "aws_instance" "webapp" {
   } 
 }
 
+resource "aws_eip" "myeip" {
+  instance = aws_instance.webapp.id
+}
+
+output "my_eip" {
+  value = aws_eip.myeip.public_ip
+}
