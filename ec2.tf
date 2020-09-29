@@ -1,7 +1,7 @@
 resource "aws_instance" "webapp" {
   ami 		= lookup(var.ami_id, var.region)
   instance_type = "t2.micro"
-  key_name 	= "class02webapp" 
+  key_name 	= var.key_name 
 
   user_data = <<-EOF
               #!/bin/bash
